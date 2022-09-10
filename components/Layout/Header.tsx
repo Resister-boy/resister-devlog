@@ -7,7 +7,7 @@ function Header() {
     <header className='w-full bg-[#F2F4FF]'>
       <div className='w-4/5 h-auto mx-auto flex justify-between py-4 items-center'>
         <div className='w-2/3 flex justify-start'>
-          <div className='w-1/3 text-center border-r-2 border-[#ccc]'>
+          <div className='w-1/4 text-left border-r-2 border-[#ccc]'>
             <Logo />
           </div>
           <nav className='w-1/2 flex justify-around items-center'>
@@ -15,13 +15,13 @@ function Header() {
               <a>Home</a>
             </Link>
             <Link href="/project">
-              <a>project</a>
+              <a>Project</a>
             </Link>
             <Link href="/content">
-              <a>blog</a>
+              <a>Blog</a>
             </Link>
             <Link href="/about">
-              <a>about</a>
+              <a>About</a>
             </Link>
           </nav>
         </div>
