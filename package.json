@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.8",
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.2",
     "next": "12.3.0",
     "postcss": "^8.4.16",
     "react": "18.2.0",
