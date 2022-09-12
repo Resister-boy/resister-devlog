@@ -10,7 +10,8 @@ const nextConfig = {
   },
   images: {
     domains: [
-      "gateway.pinata.cloud"
+      "gateway.pinata.cloud",
+      "s3.us-west-2.amazonaws.com"
     ]
   }
 }

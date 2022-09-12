@@ -55,7 +55,7 @@ const renderBlock = (block: any) => {
     case 'heading_1':
         return <p className='text-3xl font-semibold'>{block.heading_1.rich_text[0].text.content}</p>
     case 'heading_2':
-        return <p className='text-2xl font-semibold'>{block.heading_2.rich_text[0].text.content}</p>
+        return <p className='text-3xl font-semibold'>{block.heading_2.rich_text[0].text.content}</p>
     case 'heading_3':
         return <p className='text-xl font-semibold'>{block.heading_3.rich_text[0].text.content}</p>
     case 'heading_4':
@@ -80,6 +80,17 @@ const renderBlock = (block: any) => {
               <p className='text-[#292929] py-4 px-8'>{block.code.rich_text[0].text.content}</p>
             </div>
           )
+    case 'image':
+        return (
+          <div className='w-full my-5 flex justify-center items-center'>
+            <Image 
+              src={block.image.file.url}
+              alt="image"
+              width={700}
+              height={300}
+            />
+          </div>
+        )
     case 'bookmark': {
         return (
           <Link href={block.bookmark.url}>
@@ -144,14 +155,3 @@ const ContentDetail:NextPage<Props> = ({id, post, blocks}) => {
 }
 
 export default ContentDetail;
-
-
-
-  
-//   return (
-
-//   )
-// }
-
-
-// export default ContentDetail
