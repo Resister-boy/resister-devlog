@@ -1,10 +1,18 @@
 import { NextPage } from 'next'
 import React from 'react'
+import Content from '../components/Common/Content'
 
 const Contents:NextPage = ({ contents }: any) => {
-  console.log(contents)
+  const content = contents.results
+
   return (
-    <div>Content</div>
+    <section>
+      {content.map((content: any, index:number) => {
+        return (
+          <Content key={index} content={content} />
+        )
+      })}
+    </section>
   )
 }
 
@@ -16,7 +24,7 @@ export async function getServerSideProps() {
       Accept: 'application/json', 
       'Notion-Version': '2022-02-22',
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${'secret_OoMXYlZ6Jqh39BEFF0usIZIaZJoyM2q7GaIEApqkdOU'}`
+      Authorization: `Bearer ${process.env.BLOG_DATABASE_APIKEY}`
     },
     body: JSON.stringify({
       sorts: [
@@ -29,7 +37,7 @@ export async function getServerSideProps() {
     })
   };
 
-  const response = await fetch(`https://api.notion.com/v1/databases/${'b806b6cc4e0f44918c0b46e6fe0a0598'}/query`, options)
+  const response = await fetch(`https://api.notion.com/v1/databases/${process.env.BLOG_DATABASE_ID}/query`, options)
   const contents = await response.json()
 
   return {
