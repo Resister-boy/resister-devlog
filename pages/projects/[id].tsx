@@ -11,16 +11,14 @@ function ProjectDetail({ projects }: any) {
 
   return (
     <section className='w-2/3 mx-auto my-12'>
-      <div className='text-center'>
-        <Image 
-          src={project.properties.Image.files[0].external.url}
-          alt="Project Image"
-          width={900}
-          height={400}
-        />
-      </div>
       <div className='w-full mx-auto mt-12 px-16'>
-        <div className='flex justify-between items-center'>
+        <Image 
+            src={project.properties.Image.files[0].external.url}
+            alt="Project Image"
+            width={900}
+            height={400}
+          />
+        <div className='flex mt-8 justify-between items-center'>
           <span className='text-2xl font-semibold'>{project.properties.Name.title[0].text.content}</span>
           <div className='flex'>{project.properties.Tech.multi_select.map((stack:any, index:number) => {
             return (
