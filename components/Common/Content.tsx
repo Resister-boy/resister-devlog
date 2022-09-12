@@ -20,7 +20,7 @@ function Content({ content }) {
           <div>description</div>
           <div className='flex justify-between'>
             <div className='mt-8'> 
-              <span>{keywords && keywords.map((keyword: any, index: number) => {
+              <span className='flex mr-2'>{keywords && keywords.map((keyword: any, index: number) => {
                 return (
                   <div className="bg-slate-100 flex justify-center items-center text-[#333] text-sm font-semobold mr-1 rounded-md px-2" key={index}>{keyword.name}</div>
                 )

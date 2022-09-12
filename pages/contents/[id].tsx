@@ -47,12 +47,6 @@ export async function getServerSideProps() {
       Authorization: `Bearer ${process.env.BLOG_DATABASE_APIKEY}`
     },
     body: JSON.stringify({
-      sorts: [
-          {
-              "property": "Name",
-              "direction": "ascending"
-          }
-      ],
       page_size: 100
     })
   };
@@ -64,5 +58,7 @@ export async function getServerSideProps() {
     props: { contents }
   }
 }
+
+
 
 export default ContentDetail

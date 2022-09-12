@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@notionhq/client": "^2.2.0",
     "autoprefixer": "^10.4.8",
     "axios": "^0.27.2",
     "dotenv": "^16.0.2",
