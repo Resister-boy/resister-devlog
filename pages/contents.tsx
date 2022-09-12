@@ -6,7 +6,7 @@ const Contents:NextPage = ({ contents }: any) => {
   const content = contents.results
 
   return (
-    <section>
+    <section className='w-2/3 mx-auto my-28'>
       {content.map((content: any, index:number) => {
         return (
           <Content key={index} content={content} />

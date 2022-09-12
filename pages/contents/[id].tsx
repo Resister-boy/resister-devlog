@@ -3,10 +3,12 @@ import { useRouter } from 'next/router'
 
 function ContentDetail() {
   const router = useRouter()
-  console.log(router)
+  const contentId = router.query.id
   
   return (
-    <div>ContentDetail</div>
+    <section>
+      {contentId}
+    </section>
   )
 }
 
