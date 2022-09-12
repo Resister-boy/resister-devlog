@@ -13,10 +13,10 @@ const Home:NextPage = () => {
           {`Studying Web client & Smart Contract. My favorite programming language is javaScript and typeScript and I'm interested in Solidity, Golang and Rust. Also I'm dreaming to become a developer create greate product. Here is a space logging my life as a developer. Thank you for visiting.`}
         </p>
         <div className='w-full mt-12 flex justify-center'>
-          <Link href="/project">
+          <Link href="/projects">
             <a className='block w-32 h-10 flex border-2 border-slate-200 justify-center items-center mx-4 rounded-xl hover:bg-slate-200 duration-200'>Go to Project</a>
           </Link>
-          <Link href="/content">
+          <Link href="/contents">
             <a className='block w-32 h-10 flex border-2 border-slate-200 justify-center items-center mx-4 rounded-xl hover:bg-slate-200 duration-200'>Go to Blog</a>
           </Link>
         </div>

@@ -1,13 +1,21 @@
 import { NextPage } from 'next'
 import React from 'react'
+import Project from '../components/Common/Project'
 
 
-const Project:NextPage = ({ projects }: any) => {
-
-  console.log(projects)
+const Projects:NextPage = ({ projects }: any) => {
+  const project = projects.results
 
   return (
-    <div>Project</div>
+    <section className='w-4/5 mx-auto my-16'>
+      <div className='flex justify-between flex-wrap'>
+        {project.map((project: any, index: number) => {
+          return (
+            <Project key={index} project={project} />
+          )
+        })}
+      </div>
+    </section>
   )
 }
 
@@ -36,8 +44,8 @@ export async function getServerSideProps() {
   const projects = await response.json()
 
   return {
-    props: {projects},
+    props: { projects },
   }
 }
 
-export default Project
+export default Projects
