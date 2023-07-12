@@ -41,9 +41,6 @@ export async function getPage(pageId: string): Promise<ExtendedRecordMap> {
   let recordMap = await notion.getPage(pageId)
 
   if (navigationStyle !== 'default') {
-    // ensure that any pages linked to in the custom navigation header have
-    // their block info fully resolved in the page record map so we know
-    // the page title, slug, etc.
     const navigationLinkRecordMaps = await getNavigationLinkPages()
 
     if (navigationLinkRecordMaps?.length) {
@@ -60,7 +57,7 @@ export async function getPage(pageId: string): Promise<ExtendedRecordMap> {
     ;(recordMap as any).preview_images = previewImageMap
   }
 
-  return recordMap
+  return (recordMap);
 }
 
 export async function search(params: SearchParams): Promise<SearchResults> {

@@ -20,7 +20,7 @@ module.exports = withBundleAnalyzer({
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"
   },
   env: {
-    WORKSPACE_APIKEY: process.env.WORKSPACE_APIKEY,
-    WORKSPACE_PRIVATE_KEY: process.env.WORKSPACE_PRIVATE_KEY
+    NEXT_PUBLIC_WORKSPACE_APIKEY: process.env.NEXT_PUBLIC_WORKSPACE_APIKEY,
+    NEXT_PUBLIC_WORKSPACE_PRIVATE_KEY: process.env.NEXT_PUBLIC_WORKSPACE_PRIVATE_KEY
   }
 })
