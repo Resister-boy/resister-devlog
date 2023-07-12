@@ -18,5 +18,9 @@ module.exports = withBundleAnalyzer({
     formats: ['image/avif', 'image/webp'],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"
+  },
+  env: {
+    WORKSPACE_APIKEY: process.env.WORKSPACE_APIKEY,
+    WORKSPACE_PRIVATE_KEY: process.env.WORKSPACE_PRIVATE_KEY
   }
 })
