@@ -19,14 +19,13 @@ import { getCanonicalPageUrl, mapPageUrl } from '@/lib/map-page-url'
 import { searchNotion } from '@/lib/search-notion'
 import { useDarkMode } from '@/lib/use-dark-mode'
 
-import { Footer } from './Footer'
-import { GitHubShareButton } from './GitHubShareButton'
-import { Loading } from './Loading'
-import { NotionPageHeader } from './NotionPageHeader'
-import { Page404 } from './Page404'
-import { PageAside } from './PageAside'
-import { PageHead } from './PageHead'
-import styles from './styles.module.css'
+import { Footer } from 'components/layout/Footer'
+import { Loading } from '../Loading/Loading'
+import { NotionPageHeader } from 'components/common/Notion/NotionPageHeader'
+import { Page404 } from 'components/error/Page404'
+import { PageAside } from 'components/PageAside'
+import { PageHead } from 'components/common/Head/PageHead'
+import styles from 'components/styles.module.css'
 
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components
@@ -138,7 +137,6 @@ const propertyTextValue = (
   if (pageHeader && schema?.name?.toLowerCase() === 'author') {
     return <b>{defaultFn()}</b>
   }
-
   return defaultFn()
 }
 
@@ -280,8 +278,6 @@ export const NotionPage: React.FC<types.PageProps> = ({
         pageAside={pageAside}
         footer={footer}
       />
-
-      <GitHubShareButton />
     </>
   )
 }

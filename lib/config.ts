@@ -1,20 +1,14 @@
-/**
- * Site-wide app configuration.
- *
- * This file pulls from the root "site.config.ts" as well as environment variables
- * for optional depenencies.
- */
 import { parsePageId } from 'notion-utils'
 import { PostHogConfig } from 'posthog-js'
 
-import { getEnv, getSiteConfig } from './get-config-value'
-import { NavigationLink } from './site-config'
+import { getEnv, getSiteConfig } from 'lib/get-config-value'
+import { NavigationLink } from 'lib/site-config'
 import {
   NavigationStyle,
   PageUrlOverridesInverseMap,
   PageUrlOverridesMap,
   Site
-} from './types'
+} from 'lib/types'
 
 export const rootNotionPageId: string = parsePageId(
   getSiteConfig('rootNotionPageId'),
@@ -23,7 +17,7 @@ export const rootNotionPageId: string = parsePageId(
 
 if (!rootNotionPageId) {
   throw new Error('Config error invalid "rootNotionPageId"')
-}
+} 
 
 // if you want to restrict pages to a single notion workspace (optional)
 export const rootNotionSpaceId: string | null = parsePageId(

@@ -3,7 +3,7 @@
   "short_name": "resister-devlog",
   "icons": [
     {
-      "src": "/favicon.png",
+      "src": "/favicon.ico",
       "type": "image/png",
       "sizes": "32x32"
     }

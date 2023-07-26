@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { GetStaticProps } from 'next'
 
-import { NotionPage } from '@/components/NotionPage'
+import { NotionPage } from '@/components/common/Notion/NotionPage'
 import { domain, isDev } from '@/lib/config'
 import { getSiteMap } from '@/lib/get-site-map'
 import { resolveNotionPage } from '@/lib/resolve-notion-page'

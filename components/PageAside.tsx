@@ -4,8 +4,8 @@ import { Block, ExtendedRecordMap } from 'notion-types'
 
 import { getPageTweet } from '@/lib/get-page-tweet'
 
-import { PageActions } from './PageActions'
-import { PageSocial } from './PageSocial'
+import { PageActions } from 'components/PageActions'
+import { PageSocial } from 'components/PageSocial'
 
 export const PageAside: React.FC<{
   block: Block

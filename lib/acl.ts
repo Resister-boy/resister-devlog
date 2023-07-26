@@ -1,38 +1,31 @@
 import { PageProps } from './types'
 
-export async function pageAcl({
-  site,
-  recordMap,
-  pageId
-}: PageProps): Promise<PageProps> {
+export async function pageAcl({ site, recordMap, pageId }: PageProps): Promise<PageProps> {
   if (!site) {
-    return {
-      error: {
-        statusCode: 404,
-        message: 'Unable to resolve notion site'
-      }
+    const error = {
+      statusCode: 404,
+      message: 'Unable to resolve notion site'
     }
+    return {  error: error }
   }
 
   if (!recordMap) {
-    return {
-      error: {
-        statusCode: 404,
-        message: `Unable to resolve page for domain "${site.domain}". Notion page "${pageId}" not found.`
-      }
+    const error = {
+      statusCode: 404,
+      message: `Unable to resolve page for domain "${site.domain}". Notion page "${pageId}" not found.`
     }
+    return { error: error }
   }
 
   const keys = Object.keys(recordMap.block)
   const rootKey = keys[0]
 
   if (!rootKey) {
-    return {
-      error: {
-        statusCode: 404,
-        message: `Unable to resolve page for domain "${site.domain}". Notion page "${pageId}" invalid data.`
-      }
+    const error = {
+      statusCode: 404,
+      message: `Unable to resolve page for domain "${site.domain}". Notion page "${pageId}" invalid data.`
     }
+    return { error: error }
   }
 
   const rootValue = recordMap.block[rootKey]?.value
@@ -44,12 +37,11 @@ export async function pageAcl({
     rootSpaceId !== site.rootNotionSpaceId
   ) {
     if (process.env.NODE_ENV) {
-      return {
-        error: {
-          statusCode: 404,
-          message: `Notion page "${pageId}" doesn't belong to the Notion workspace owned by "${site.domain}".`
-        }
+      const error = {
+        statusCode: 404,
+        message: `Notion page "${pageId}" doesn't belong to the Notion workspace owned by "${site.domain}".`
       }
+      return { error: error }
     }
   }
 }

@@ -9,7 +9,7 @@ import { Breadcrumbs, Header, Search, useNotionContext } from 'react-notion-x'
 import { isSearchEnabled, navigationLinks, navigationStyle } from '@/lib/config'
 import { useDarkMode } from '@/lib/use-dark-mode'
 
-import styles from './styles.module.css'
+import styles from 'components/styles.module.css'
 
 const ToggleThemeButton = () => {
   const [hasMounted, setHasMounted] = React.useState(false)
@@ -77,9 +77,7 @@ export const NotionPageHeader: React.FC<{
               }
             })
             .filter(Boolean)}
-
           <ToggleThemeButton />
-
           {isSearchEnabled && <Search block={block} title={null} />}
         </div>
       </div>
