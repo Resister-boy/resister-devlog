@@ -10,11 +10,11 @@ export default siteConfig({
 
   // basic site info (required)
   name: 'resister-devlog',
-  domain: 'resister-devlog.vercel.app',
+  domain: 'resister-devlog.dev',
   author: 'resister-boy',
 
   // open graph metadata (optional)
-  description: 'Example Next.js Notion Starter Kit Site',
+  description: 'Hello, World🚀. Turning Vision Into Reality With Code.',
 
   twitter: 'resister_boy',
   github: 'Resister-boy',

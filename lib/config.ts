@@ -17,7 +17,7 @@ export const rootNotionPageId: string = parsePageId(
 
 if (!rootNotionPageId) {
   throw new Error('Config error invalid "rootNotionPageId"')
-} 
+}
 
 // if you want to restrict pages to a single notion workspace (optional)
 export const rootNotionSpaceId: string | null = parsePageId(
